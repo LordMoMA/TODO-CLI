@@ -3,21 +3,17 @@
 ## Play with the CLI
 
 ```bash
-➜  todo git:(main) ✗ go run main.go -list
-➜  todo git:(main) ✗ go run main.go -task "David and Helen"
-➜  todo git:(main) ✗ go run main.go -task "Make Canada Great Again"
-➜  todo git:(main) ✗ go run main.go -list                          
-David and Helen
-Make Canada Great Again
-➜  todo git:(main) ✗ go run main.go -complete "Find an apartment in CA"
-➜  todo git:(main) ✗ go run main.go -list                          
-David and Helen
-Make Canada Great Again
-Find an apartment in CA
-➜  todo git:(main) ✗ go run main.go -complete 3                        
-➜  todo git:(main) ✗ go run main.go -list                              
-David and Helen
-Make Canada Great Again
+➜  todo git:(main) ✗ ./todo -task "David's journey"
+➜  todo git:(main) ✗ ./todo -list                  
+ 1: David's journey
+➜  todo git:(main) ✗ ./todo -task "Helen comes with me"
+➜  todo git:(main) ✗ ./todo -list                      
+ 1: David's journey
+ 2: Helen comes with me
+➜  todo git:(main) ✗ ./todo -complete 1
+➜  todo git:(main) ✗ ./todo -list      
+X1: David's journey
+ 2: Helen comes with me
 ```
 
 ## tips
@@ -38,12 +34,6 @@ Usage of ./todo:
         Task to be included in the TODO list
 ```
 
-Check what's inside the todo.json file
-```bash
-cat todo.json
-
-[{"Task":"David and Helen","Done":false,"CreatedAt":"2023-11-11T00:24:14.467859+08:00","CompletedAt":"0001-01-01T00:00:00Z"},{"Task":"Make Canada Great Again","Done":false,"CreatedAt":"2023-11-11T00:26:33.358406+08:00","CompletedAt":"0001-01-01T00:00:00Z"}]
-```
 
 ## Run the tests
 

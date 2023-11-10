@@ -17,6 +17,18 @@ type item struct {
 
 type List []item
 
+func (l *List) String() string {
+	var str string
+	for k, t := range *l {
+		prefix := " "
+		if t.Done {
+			prefix = "X"
+		}
+		str += fmt.Sprintf("%s%d: %s\n", prefix, k+1, t.Task)
+	}
+	return str
+}
+
 func (l *List) Add(task string) {
 	t := item{
 		Task:        task,
