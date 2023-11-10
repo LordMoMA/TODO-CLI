@@ -14,13 +14,14 @@ func main() {
 	list := flag.Bool("list", false, "List all tasks")
 	complete := flag.Int("complete", 0, "Item to be completed")
 
-	flag.Parse()
 	flag.Usage = func() {
-		fmt.Fprintf(flag.CommandLine.Output(), "Smart TODO App developed for work efficiency %s:\n", os.Args[0])
+		fmt.Fprintf(flag.CommandLine.Output(), "%s tool. Smart TODO App developed for work efficiency:\n", os.Args[0])
 		fmt.Fprintf(flag.CommandLine.Output(), "Copyright 2023\n")
 		fmt.Fprintln(flag.CommandLine.Output(), "Usage Information:")
 		flag.PrintDefaults()
 	}
+	flag.Parse()
+
 	l := &todo.List{}
 
 	if err := l.Load(todoFileName); err != nil {
