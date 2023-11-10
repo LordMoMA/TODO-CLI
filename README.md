@@ -20,6 +20,24 @@ David and Helen
 Make Canada Great Again
 ```
 
+## tips
+
+A benefit of using the flag package is that it provides automatic usage information if the user gives an invalid option or specifically requests help. 
+You don’t have to do anything special to take advantage of this behavior either. 
+Try it out by running your program with the -h option:
+
+```bash
+➜  todo git:(main) ✗ go build .
+➜  todo git:(main) ✗ ./todo -h
+Usage of ./todo:
+  -complete int
+        Item to be completed
+  -list
+        List all tasks
+  -task string
+        Task to be included in the TODO list
+```
+
 Check what's inside the todo.json file
 ```bash
 cat todo.json
